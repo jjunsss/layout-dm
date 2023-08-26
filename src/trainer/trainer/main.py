@@ -24,7 +24,7 @@ from trainer.helpers.visualization import save_image
 from trainer.hydra_configs import DataConfig, TrainConfig
 from trainer.models.common.util import save_model
 
-from .crossplatform_util import filter_args_for_ai_platform
+from crossplatform_util import filter_args_for_ai_platform
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -76,7 +76,7 @@ def main(cfg: DictConfig) -> None:
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    transform = compose_transform(cfg.data.transforms)
+    transform = compose_transform(cfg.data.transforms) #! only random transformation
     train_dataset = instantiate(cfg.dataset)(split="train", transform=transform)
     val_dataset = instantiate(cfg.dataset)(split="val", transform=transform)
 

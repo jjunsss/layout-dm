@@ -1,0 +1,35 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: 현재 파일",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        },
+        {
+            "name": "Poetry Debug",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/uvllkjs/layout-dm/src/trainer/trainer/main.py",
+            "args": [
+                "--multirun",
+                "+experiment=layoutdm",
+                "fid_weight_dir=./download/fid_weights/FIDNetV3",
+                "job_dir=tmp/jobs/publaynet/layoutdm_202308241200",
+                "dataset=coco",
+                "dataset.dir=./download/datasets",
+                "data.num_workers=16",
+                "seed=0"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        }
+
+    ]
+}
